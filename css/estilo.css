@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif!important;    
+}
+
+:root{
+    scroll-behavior: smooth;
+} 
+
+.contenedor{
+    width: 90%;
+    max-width: 1400px;
+    overflow: hidden;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.header{
+    height: 70vh;    
+    background-image: linear-gradient(to top, rgb(49, 155, 93) 0%, rgba(60, 226, 129, 0.5) 100%), url(../img/manos.jpg);    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.head{
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.hamburguer{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgb(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.menu-navegacion{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100%;
+    background-image: linear-gradient(135deg, #056d39 0%, #056d39 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform .3s ease-in-out;
+    transform: translate(110%);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.menu-navegacion a:hover{
+    color: #fff;
+}
+
+.spread{
+    transform: translate(0);
+}
+
+.menu-navegacion a{
+    color: #fff;
+    text-decoration: none!important;
+}
+
+.titulo{
+    font-size: 65px!important;
+    margin-bottom: 15px;
+}
+
+.copy{
+    font-weight: 300!important;
+    font-size: 25px;
+}
+
+/*Nuestro Servicio*/
+.subtitulo{
+    text-align: center;
+    font-weight: 300!important;
+    color: brown;
+    margin-bottom: 25px;
+    font-size: 40px!important;
+}
+
+.fundacion-img{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;    
+}
+
+.agregar-imagen{
+    object-fit: cover;
+    width: 60%;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: transform .3s .2s;
+}
+
+/* mapa y formulario */
+.contenedor-mapa{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-mapa iframe{
+    width: 95%;
+    height: 455px;
+    padding: 10px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0,0,0,.125);
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    margin-bottom: 0.25rem;
+    padding: 0.5rem
+}
+
+.contenedor-formulario{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.espacio-form{
+    padding: 10px;
+}
+
+.form-space{
+    z-index: 0;
+}
+
+.color-boton{    
+    background: brown!important;
+    color: #fff!important;
+}
+
+/*boton para ver la carta*/
+.contenedor-boton{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.contenedor-boton a{
+    color: #fff;
+    text-decoration: none!important;
+}
+
+.boton {
+    background: linear-gradient(-45deg, #667eea, #683d93, #f43b47, #453a94);
+    background-size: 800% 400%;
+    padding: .5em 1em;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all .5s ease-in-out;
+    animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+   }
+   
+   .boton:hover {
+    animation: gradient 3s infinite;
+    transform: scale(1.05);
+    color: #fff;
+   }
+   
+   .boton:active {
+    animation: gradient 3s infinite;
+    transform: scale(0.8);
+   }
+   
+   @keyframes gradient {
+    0% {
+     background-position: 0% 50%;
+    }
+   
+    50% {
+     background-position: 100% 50%;
+    }
+   
+    100% {
+     background-position: 0% 50%;
+    }
+   }
+
+/*footer*/
+footer{
+    background-color:#056d39;
+    padding-bottom: 0.1px;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.contact-us{
+    width: 40%;
+    color: #fff;
+}
+
+.brand{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.brand+p{
+    font-weight: 500;
+}
+
+.social-media{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-media-icon{
+    display: inline-block;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;    
+    border-radius: 50%;
+    text-align: center;
+    color: #ffffff;    
+}
+
+.social-media-icon:hover{
+    background: #fff;
+    color: #056d39;
+}
+
+.social-media-icon i{
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.line{
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 60px;
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    padding-top: 5px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1000px){
+    .menu-navegacion{
+        width: 40vw;
+    }
+
+    .titulo{
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .menu-navegacion{
+        width: 50vw;
+    }
+
+    .titulo{
+        font-size: 40px;
+    }
+    
+    .fundacion-img{
+        width: 55%;        
+    }
+    
+    .agregar-imagen{
+        width: 80%;
+
+    }
+    
+    .footer-content{
+        justify-content: center;
+    }
+
+    .social-media{
+        width: 80%;
+        justify-content: space-evenly;
+    }
+
+    .social-media-icon{
+        margin-left: 0;
+    }
+
+    .social-media i{
+        margin-left: 0;
+    }
+
+    .contact-us{
+        text-align: center;
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .contenedor-mapa{
+        width: 100%;
+    }
+
+    .contenedor-mapa iframe{
+        height: 350px;
+    }
+
+    .contenedor-formulario{
+        width: 100%;
+    }
+
+    .espacio-form{
+        padding: 8px;
+    }
+
+    footer{
+        margin-top: 10px;
+        padding-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .menu-navegacion{
+        width: 65vw;
+    }
+
+    .hamburguer{
+        top: 20px;
+        right: 20px;
+    }
+    
+    .fundacion-img{
+        width: 70%;        
+    }
+
+    .titulo{
+        font-size: 30px;
+    }
+
+    .subtitulo{
+        font-size: 30px;
+    }
+    
+    .agregar-imagen{
+        width: 95%;
+    }
+
+    .social-media{
+        width: 100%;
+    }
+
+    .contact-us{
+        width: 90%;
+    }
+    
+    .contenedor-mapa iframe{
+        height: 250px;
+    }
+
+    .espacio-form{
+        padding: 5px;
+    }
+
+    footer{
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .brand{
+        font-size: 35px;
+    }
+    
+}
+
+@media screen and (max-width: 300px){
+    footer{
+        margin-top: 40px;
+        padding-bottom: 10px;
+    }
+
+    .contenedor{
+        overflow: visible;
+    }
+
+    .brand{
+        font-size: 30px;
+    }
+
+}
