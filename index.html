@@ -7,7 +7,7 @@
     <title class="titulo">Fundación A.V.E.S.</title>
     <link rel="icon" href="img/fundacionAves.ico">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">  
-    <link rel="stylesheet" href="css/bootstrap.min.css">  
+    <link rel="stylesheet" href="css/bootstrap.css">  
 </head>
 <body>
     <header class="header" id="inicio">
@@ -101,18 +101,18 @@
             <div class="contenedor-formulario">
                 <div class="contenedor">
                 <div class="container col-12">
-                    <div class="card shadow-sm p-2 mb-2 bg-white rounded">
-                        <!--form class="espacio-form" onsubmit="validarGeneral(event)" id="formConsulta"-->
-                        <form class="espacio-form" id="form" action="https://formspree.io/f/mlekzqgz" method="post">
+                    <div class="card shadow-sm p-2 mb-2 bg-white rounded">                        
+                        <!--form class="espacio-form" name="formulario1" id="form" action="https://formspree.io/f/mlekzqgz" method="post"-->
+                            <form class="espacio-form" name="formulario1" id="form" method="post">    
                             <div class="form-group">
                                 <label>Nombre y apellido</label>
-                                <input type="text" name="name" class="form-control" id="name" required placeholder="Ej. Diego Morales">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Ej. Diego Morales">
                                 
                             </div>
                             <div class="form-group">
                                 <label>Mail</label>
-                                <input type="email" name="email" class="form-control" id="email" required placeholder="Ej. diego_morales@gmail.com">
-                                
+                                <!--input type="email" name="email" class="form-control" id="email" required placeholder="Ej. diego_morales@gmail.com"-->
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Ej. diego_morales@gmail.com">
                             </div>
                             
                             <div class="form-group">
@@ -120,7 +120,7 @@
                                 <textarea type="text" name="message" class="form-control" id="message" placeholder="Ingrese su consulta de al menos 10 caracteres"></textarea>
                                
                             </div>
-                            <button type="submit" class="btn color-boton">Enviar</button>
+                            <button type="submit" id="bt_enviar" class="btn color-boton">Enviar</button>
                         </form>
                         <div class="alert alert-info my-4 d-none" id="msjEnvio" role="alert"></div>
                     </div>
@@ -156,14 +156,59 @@
     </footer>
     <script src="js/menu.js"></script>
 
+    
     <script>
+        // ------------------------------------------------------------------------------------------------------
+        
+        var formulario = document.getElementsByName('formulario1')[0],
+        elementos = formulario.elements,
+        boton = document.getElementById('bt_enviar')        
+
+        var validarNombre = function (e) {
+            console.log('DETRO DE LA FUNCION: VALIDAR-NOMBE!')
+            console.log('Nomre: '+formulario.name.value)
+            
+            if (formulario.name.value == 0) {     
+                alert("Por favor complete el campo Nombre y apellido!")           
+                e.preventDefault()                
+            }            
+        }
+
+        var validarMail = function (e) {            
+            if (formulario.email.value == 0) {     
+                alert("Por favor complete el campo Mail!")           
+                e.preventDefault()                
+            }            
+        }
+
+        var validarConsulta = function (e) {            
+            if (formulario.message.value == 0) {     
+                alert("Por favor ingrese su Consulta!")           
+                e.preventDefault()                
+            }            
+        }
+        
+        var validar = function (e) { 
+            validarNombre(e)
+            validarMail(e)
+            validarConsulta(e)            
+        }        
+        
+
+       formulario.addEventListener("submit", validar)
+       
+
+        // ------------------------------------------------------------------------------------------------------
+    </script>
+    
+    <!--script>
         const $form = document.querySelector('#form')
         $form.addEventListener('submit', handlesubmit)
 
             async function handlesubmit(event){
                 event.preventDefault()
                 const form = new FormData(this)
-                const response = await fetch(this.action, {
+                /*const response = await fetch(this.action, {
                     method: this.method,
                     body: form,
                     headers: {
@@ -173,8 +218,12 @@
                 if (response.ok){
                     this.reset()
                     alert('Su mensaje se envió en forma exitosa!')
-                }        
+                }*/     
+                
+                console.log('debe de ejecutar si todo esta bien!!')
+
+
             }
-    </script>
+    </script-->
 </body>
 </html>
